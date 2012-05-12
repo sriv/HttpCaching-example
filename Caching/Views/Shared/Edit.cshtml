@@ -1,0 +1,9 @@
+﻿@model object
+@{ViewBag.Title = "Edit";}
+
+<h2>Edit</h2>
+@using (Html.BeginForm())
+{
+    @Html.EditorForModel();
+    <input name="Save" type="submit" value="Save" />
+}
