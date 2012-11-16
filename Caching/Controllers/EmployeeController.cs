@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Threading;
+using System.Web.Mvc;
 using Caching.Caching;
 using Caching.Models;
 
@@ -48,6 +49,9 @@ namespace Caching.Controllers
         public ActionResult Details(long id)
         {
             var model = InMemoryRepository.Get<EmployeeModel>(id);
+            //simulate a long running process
+            Thread.Sleep(7500);
+
             return View(model);
         }
     }
